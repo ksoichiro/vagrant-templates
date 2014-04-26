@@ -13,11 +13,14 @@
 
   <h2>Usage</h2>
 
-  <p>Download the following links and execute the commands below.</p>
+  <p>Download or copy the following links and execute the commands below.</p>
   <pre class="code">
-$ vagrant box add TITLE URL
-$ vagrant init TITLE
-$ vagrant up
+  <span class="prompt">$</span> vagrant box add TITLE URL
+<span class="desc">or if you've already downloaded the box file,</span>
+  <span class="prompt">$</span> vagrant box add TITLE /path/to/boxname.box
+<span class="desc">then</span>
+  <span class="prompt">$</span> vagrant init TITLE
+  <span class="prompt">$</span> vagrant up
 </pre>
 
   <h2>Vagrantfile</h2>

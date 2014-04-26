@@ -31,6 +31,12 @@ pre.code {
   font-weight: 200;
   font-size: 0.9em;
 }
+pre.code span.prompt {
+  color: #999;
+}
+pre.code span.desc {
+  color: #666;
+}
 #boxes {
   border: 1px solid #ccc;
   border-collapse: collapse;
