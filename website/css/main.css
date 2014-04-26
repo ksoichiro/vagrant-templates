@@ -1,0 +1,10 @@
+#copyright {
+  font-size: 0.8em;
+}
+
+pre.code {
+  border: 1px solid #ccc;
+  background: #eee;
+  padding: 1em;
+  margin: 1em;
+}

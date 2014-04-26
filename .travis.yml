@@ -1,0 +1,8 @@
+deploy:
+  provider: heroku
+  buildpack: ruby
+  api_key:
+    secure: bCCjdQt8o2LH5ygSaFO4YOoN0U6xfHBCRI1aCByMYn/iYXwJTteMKF4xRhp890enmYpgTv2BfgBNowiEtB0AZom87fnxSFELVopcNTzpJOkIL1kdY8aXME348emijmZD46rmuDBwiAA54xT8UKZ64UYHhro4/IDWu46pJw5F5Aw=
+  app: customboxes
+  on:
+    repo: ksoichiro/vagrant-templates
