@@ -1,4 +1,2 @@
-require 'rubygems'
-require 'sinatra'
-get('/') { open('website/index.html').read }
-run Sinatra::Application
+use Rack::Static, urls: [''], root: 'website', index: 'index.html'
+run lambda {|env|}
