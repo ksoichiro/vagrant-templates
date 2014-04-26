@@ -20,6 +20,7 @@ p {
 }
 #copyright {
   font-size: 0.8em;
+  margin-top: 20px;
 }
 pre.code {
   border: 1px solid #ccc;
@@ -29,4 +30,18 @@ pre.code {
   font-family: 'Source Code Pro', 'sans-serif';
   font-weight: 200;
   font-size: 0.9em;
+}
+#boxes {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin-left: 10px;
+}
+#boxes td, #boxes th {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+#boxes th {
+  text-align: left;
+  background: #eee;
+  color: #666;
 }
