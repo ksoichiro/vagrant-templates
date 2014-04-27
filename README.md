@@ -3,7 +3,7 @@ vagrant-templates
 
 Vagrantfile and provisioning scripts templates.
 
-Some of the boxes are provided by my [website](http://files.sika524.com/box/).
+Some of the boxes are provided by my [website](http://customboxes.herokuapp.com/).
 
 ## Requirements
 
