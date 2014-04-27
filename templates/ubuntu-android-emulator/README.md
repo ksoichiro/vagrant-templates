@@ -9,3 +9,4 @@ Vagrantfile template
 * Android SDK Platform-tools
 * Android SDK Build-tools r19.0.3
 * Android SDK Platform API level 17
+* Android ARM EABI v7a System Image API level 17

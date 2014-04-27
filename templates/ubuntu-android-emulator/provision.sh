@@ -31,7 +31,7 @@ if [ $? -ne 0 ]; then
   sudo apt-get install -y -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch > /dev/null 2>&1
 
   echo "Installing android sdk tools..."
-  echo y | android update sdk --filter platform-tools,build-tools-19.0.3,android-17,extra-android-support --no-ui --force > /dev/null 2>&1
+  echo y | android update sdk --filter platform-tools,build-tools-19.0.3,sysimg-17,android-17,extra-android-support --no-ui --force > /dev/null 2>&1
 fi
 
 popd > /dev/null 2>&1
@@ -42,6 +42,7 @@ cp -p /vagrant/android-*.sh ~vagrant/
 source /vagrant/android-common.sh
 if [ ! -d ${APPS_DIR} ]; then
   ~vagrant/android-create-apps.sh
+  ~vagrant/android-test-apps.sh
 fi
 
 sudo apt-get clean -y

@@ -12,12 +12,8 @@ function create_project() {
     mkdir -p ${APPS_DIR}/${app_name}
     pushd ${APPS_DIR}/${app_name} > /dev/null 2>&1
     android create project -g -v 0.9.+ -a ${activity} -k ${package} -t android-17 -p . > /dev/null 2>&1
-    echo "Caching gradlew..."
-    ./gradlew tasks > /dev/null 2>&1
     popd > /dev/null 2>&1
   fi
 }
 
 create_project example com.example.Example MainActivity
-echo "Deleting example app..."
-rm -rf ${APPS_DIR}
