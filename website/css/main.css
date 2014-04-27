@@ -51,3 +51,6 @@ pre.code span.desc {
   background: #eee;
   color: #666;
 }
+td.size {
+  text-align: right;
+}
