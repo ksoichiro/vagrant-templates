@@ -1,0 +1,16 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "precise64"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.provision :shell,
+    :inline => "(grep -q -E '^mesg n$' /root/.profile && sed -i 's/^mesg n$/tty -s \\&\\& mesg n/g' /root/.profile && echo 'Ignore the previous error about stdin not being a tty. Fixing it now...') || exit 0;"
+
+  config.vm.provision :shell, :path => "provision.sh", :privileged => false
+  #config.vm.provision :shell, :path => "provision.sh"
+  #config.vm.provision :shell, :path => "android-create-apps.sh", :privileged => false
+  #config.vm.provision :shell, :path => "android-test-apps.sh", :privileged => false
+end
