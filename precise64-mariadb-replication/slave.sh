@@ -59,7 +59,7 @@ server_id=${SERVER_ID}
 default_storage_engine=InnoDB
 EOF
 
-mysql -u${MARIADB_ADMIN_USER} -p${MARIADB_ADMIN_PASSWORD} < ${MASTER_DUMP}
+mysql -u${MARIADB_ADMIN_USER} -p${MARIADB_ADMIN_PASSWORD} < ${MASTER_DUMP} > /dev/null 2>&1
 
 MASTER_LOG_FILE=`mysql -h ${MASTER_ADDRESS} -u${MARIADB_ADMIN_USER} -p${MARIADB_ADMIN_PASSWORD} -e"show master status\G" | grep "File:" | sed -e "s/^.*: //"`
 MASTER_LOG_POS=`mysql -h ${MASTER_ADDRESS} -u${MARIADB_ADMIN_USER} -p${MARIADB_ADMIN_PASSWORD} -e"show master status\G" | grep "Position:" | sed -e "s/^.*: //"`
@@ -75,7 +75,7 @@ CHANGE MASTER TO
   MASTER_CONNECT_RETRY=10;
 EOF
 
-service mysql start
+service mysql start > /dev/null 2>&1
 mysql -u${MARIADB_ADMIN_USER} -p${MARIADB_ADMIN_PASSWORD} < /tmp/start-slave.sql > /dev/null 2>&1
 
-service mysql restart
+service mysql restart > /dev/null 2>&1

@@ -8,13 +8,13 @@ gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 EOF
 
-yum install -y MariaDB-server MariaDB-client #> /dev/null 2>&1
+yum install -y MariaDB-server MariaDB-client > /dev/null 2>&1
 if [ $? -ne 0 ]; then
   echo "Failed to install MariaDB."
   exit 1
 fi
 
-systemctl start mysql
+systemctl start mysql > /dev/null 2>&1
 if [ $? -ne 0 ]; then
   echo "Failed to start MariaDB."
   exit 1
@@ -28,5 +28,5 @@ EOF
 mysql -uroot < /tmp/init.sql > /dev/null 2>&1
 #sed -i "s/^bind-address/#bind-address/" /etc/mysql/my.cnf
 
-systemctl enable mariadb
-systemctl restart mariadb
+systemctl enable mariadb > /dev/null 2>&1
+systemctl restart mariadb > /dev/null 2>&1
