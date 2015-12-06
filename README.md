@@ -3,8 +3,6 @@ vagrant-templates
 
 Vagrantfile and provisioning scripts templates.
 
-Some of the boxes are provided by my [website](http://customboxes.herokuapp.com/).
-
 ## Requirements
 
 Scripts in this project are tested on the following environment.
