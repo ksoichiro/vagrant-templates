@@ -3,19 +3,6 @@ vagrant-templates
 
 Vagrantfile and provisioning scripts templates.
 
-## Contents
-
-* Android SDK
-* Android SDK / Android Emulator
-* Docker
-* FreeSWITCH
-* GitLab
-* GitLab (with configuration for subdirectory)
-* MariaDB
-* MariaDB (Galera Cluster)
-* MariaDB (Master/Slave replication)
-* Vim (Japanese)
-
 ## Requirements
 
 Scripts in this project are tested on the following environment.
