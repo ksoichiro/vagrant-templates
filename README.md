@@ -3,6 +3,19 @@ vagrant-templates
 
 Vagrantfile and provisioning scripts templates.
 
+## Contents
+
+* Android SDK
+* Android SDK / Android Emulator
+* Docker
+* FreeSWITCH
+* GitLab
+* GitLab (with configuration for subdirectory)
+* MariaDB
+* MariaDB (Galera Cluster)
+* MariaDB (Master/Slave replication)
+* Vim (Japanese)
+
 ## Requirements
 
 Scripts in this project are tested on the following environment.
@@ -14,16 +27,22 @@ Scripts in this project are tested on the following environment.
 
 If you want to try, checkout and execute following commands.
 
-    cd templates/TEMPLATE_NAME
-    vagrant up
+```sh
+cd TEMPLATE_NAME
+vagrant up
+```
 
 If you want to stop vagrant image created by `vagrant up`:
 
-    vagrant halt
+```sh
+vagrant halt
+```
 
 If you want to destroy vagrant image created by `vagrant up`:
 
-    vagrant destroy
+```sh
+vagrant destroy
+```
 
 ## License
 
