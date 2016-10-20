@@ -15,6 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       end
       db.vm.network :private_network, ip: "192.168.33.#{10 + seq}"
       db.vm.provision :shell, :path => 'provision.sh', :args => [seq, "192.168.33.#{10 + seq}"]
+      db.ssh.insert_key = false
     end
   end
 end

@@ -8,7 +8,7 @@ Vagrantfile and provisioning scripts templates.
 Scripts in this project are tested on the following environment.
 
 * VirtualBox(4.3.10)
-* Vagrant (1.5.1)
+* Vagrant (1.8.5)
 
 ## Usage
 

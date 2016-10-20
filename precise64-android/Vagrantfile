@@ -10,4 +10,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     :inline => "(grep -q -E '^mesg n$' /root/.profile && sed -i 's/^mesg n$/tty -s \\&\\& mesg n/g' /root/.profile && echo 'Ignore the previous error about stdin not being a tty. Fixing it now...') || exit 0;"
 
   config.vm.provision :shell, :path => "provision.sh", :privileged => false
+  config.ssh.insert_key = false
 end

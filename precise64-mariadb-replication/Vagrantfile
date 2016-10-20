@@ -15,6 +15,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
     db.vm.network :private_network, ip: master_address
     db.vm.provision :shell, :path => 'master.sh'
+    db.ssh.insert_key = false
   end
   (1..2).each do |seq|
     config.vm.define "slave#{seq}" do |db|
@@ -25,6 +26,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       end
       db.vm.network :private_network, ip: "192.168.33.#{21 + seq}"
       db.vm.provision :shell, :path => 'slave.sh', :args => [seq + 1, master_address]
+      db.ssh.insert_key = false
     end
   end
 end
