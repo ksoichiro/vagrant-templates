@@ -27,9 +27,15 @@ fi
 mkdir /usr/share/elasticsearch/config
 cp /etc/elasticsearch/elasticsearch.yml /usr/share/elasticsearch/config
 sed -i -e "s/#http.port: 9200/http.port: 9200/" /usr/share/elasticsearch/config/elasticsearch.yml
+sed -i -e "s/#network.bind_host: 192.168.0.1/network.bind_host: 0.0.0.0/" /usr/share/elasticsearch/config/elasticsearch.yml
+sed -i -e "s/#network.publish_host: 192.168.0.1/network.publish_host: _enp0s8:ipv4_/" /usr/share/elasticsearch/config/elasticsearch.yml
+sed -i -e "s/#index.number_of_replicas: 1/index.number_of_replicas: 1/" /usr/share/elasticsearch/config/elasticsearch.yml
 
 systemctl restart elasticsearch > /dev/null 2>&1
 if [ $? -ne 0 ]; then
   echo "Failed to start Elasticsearch."
   exit 1
 fi
+
+/usr/share/elasticsearch/bin/plugin -install mobz/elasticsearch-head
+
